@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      input {
+        border-radius: 15px;
+        border: 2px dashed #3c4043;
+        font-size: 16px;
+        line-height: 1;
+        outline: none;
+        font-weight: bold;
+        color: #ffff;
+        padding: 5px 10px 5px 10px;
+        background-color: orange;
+      }
+
+      p {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+    <p>A SMALL TEMPERATURE CONVERTER:</p>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script>
+      window.onload = function () {
+        let c = document.getElementById("celcius");
+        let f = document.getElementById("fahr");
+        c.oninput = function () {
+          f.value = (c.value * 9) / 5 + 32;
+        };
+        f.oninput = function () {
+          c.value = ((f.value - 32) * 5) / 9;
+        };
+      };
+    </script>
+  </head>
+
+  <body>
+    <form>
+      <label for="celcius">Celcius:</label><br />
+      <input type="number" id="celcius" value="0" />
+      <br /><br />
+      <label for="fahr">Fahrenheit:</label><br />
+      <input type="number" id="fahr" value="32" />
+      <script src="script.js"></script>
+    </form>
+  </body>
+</html>
